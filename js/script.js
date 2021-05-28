@@ -15,19 +15,19 @@ DomElement.prototype.newElem = function () {
       elem.className = this.selector.slice(1);
    }
    if (this.selector[0] === '#') {
-      elem.document.createElement('p');
+      elem = document.createElement('p');
       elem.id = this.selector.slice(1);
-      elem.textContent = 'Любой текст';
+      // elem.textContent = 'Тестовая запись';
    }
    elem.style.cssText = `height: ${this.height}px;
-  width: ${this.width}px;
-  background: ${this.bg};
-  font-size: ${this.fontSize};`;
+       width: ${this.width}px;
+       background: ${this.bg};
+       font-size: ${this.fontSize}px;`;
    return elem;
 };
 
-let elemDiv = new DomElement('.block', 100, 200, 'green', 12);
-let elemP = new DomElement('#best', 150, 400, 'red', 12);
+let elDiv = new DomElement('.block', 100, 200, 'green', 12);
+let elParagraph = new DomElement('#best', 150, 400, 'red', 12);
 
-document.body.appendChild(elemDiv.newElem());
-document.body.appendChild(elemP.newElem());
+document.body.appendChild(elDiv.newElem());
+document.body.appendChild(elParagraph.newElem());
